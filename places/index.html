@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Travel Advisor</title>	
+   <link rel="stylesheet" href="css/styles.css">
+   
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+  
+  <script src="js/angular.js"></script>
+  <!-- to use the 'ngRoute' module you need to load the angular-route library. -->
+	<script src="js/angular-route.js"></script>
+	
+	
+	<script src="js/places.js"></script>
+	
+</head>
+
+<body ng-app="myApp">
+    <div class="background">
+    
+<div class="container">
+
+
+<div id="header">
+   
+  <img src="images/globe.gif" alt="Logo" style="width:5em;height:5em;padding:1px">
+  <a href="#" id="logo">Travel Advisor</a>
+  <ul id="menu">
+    <li><a href="#search"><span>Home</span></a></li>
+  </ul>
+
+  
+
+ </div>
+
+
+<article>
+	<div ng-view>
+		<!-- this is where the content will be displayed... -->
+	</div>
+	</article>
+	
+	
+	
+	<footer>Travel Advisor</footer>
+	</div>
+	</div>
+	   
+
+</html>
+<!-- 4 html files, 3 js files   -->
