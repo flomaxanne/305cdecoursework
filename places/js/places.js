@@ -30,10 +30,12 @@ myApp.service('Map', function($q) {
             document.getElementById("map"), options
         );
         this.places = new google.maps.places.PlacesService(this.map);
+        
+        
     }
     
     this.search = function(str) {
-        var d = $q.defer();//delay an action
+        var d = $q.defer();
         this.places.textSearch({query: str }, 
         function(results, status) {
           

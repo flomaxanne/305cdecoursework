@@ -4,9 +4,8 @@
 <div class="button_box2">
 <form class="form-wrapper-2 cf" name="searchForm" novalidate ng-submit="search()">
   	<input type="text" placeholder="Search your location here" 
-  	id="autocomplete" ng-init="initializeAutocomplete()"
+  	id="autocomplete" ng-init="initializeAutocomplete()" 
   	ng-model="searchTerm"  ng-keydown="search($event)" required autofocus>
-  	
 	  <button type="submit" ng-disabled="searchForm.$invalid" >Search</button>
 </form>
 
