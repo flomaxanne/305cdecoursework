@@ -42,9 +42,7 @@ myApp.service('Map', function($q) {
 			    $scope.places = results
                 
             }
-            
             else d.reject(status);
-           
         });
         return d.promise;
     }
@@ -91,7 +89,6 @@ myApp.controller('searchController', function($scope, $http, Map) {
                 $scope.places.type =   res.types;
                 $scope.places.rating =   res.rating;
                 $scope.places.name = res.name;
-                $scope.places.icon = res.icon;
                 $scope.places.lat = res.geometry.location.lat();
                 $scope.places.lng = res.geometry.location.lng();
                 $scope.places.icon = res.photos[0].getUrl({ 'maxWidth': 200, 'maxHeight': 200 });

@@ -8,8 +8,8 @@ exports.search = function(query, callback) {
     callback({code:400, response:{status:'error', message:'No input for query'}})
   }
 
-    
-          exports.search = function() {
+
+        $scope.search = function() {
         request.get(Map.search($scope.searchTerm)
         .then(
             function(err,res,body) { // success
@@ -27,7 +27,10 @@ exports.search = function(query, callback) {
     const results = json.results
     if (results){
 	    const places = results.map(function(element) {
-	      return {id:element.id, name:element.name, place_id:element.placeid, geometry:{lat:element.geometry.location.lat(), lng:element.geometry.location.lng()}}
+	      return {id:element.id, name:element.name, place_id:element.placeid, geometry:{lat:element.geometry.location.lat(), lng:element.geometry.location.lng(),
+	              types:element.types, rating:element.rating, icon:element.icon
+	              
+	      }}
 	    })
 	    console.log(places.length +' places found')
 	    callback({code:200, response:{status:'success', message:'Google places found', data:places}})
