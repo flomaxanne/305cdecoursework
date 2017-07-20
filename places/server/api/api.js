@@ -1,4 +1,4 @@
-var books = require('./books.js')
+var books = require('./gplaces.js')
 var restify = require('restify')
 var server = restify.createServer()
 
