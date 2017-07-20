@@ -11,9 +11,6 @@ myApp.config( ['$routeProvider', function($routeProvider) {
       controller: 'searchController'
 		})
 		
-		.otherwise({
-		  redirectTo: 'search'
-		})
 	}])
 
 
@@ -21,13 +18,13 @@ myApp.service('Map', function($q) {
     
     this.init = function() {
         var options = {
-            center: new google.maps.LatLng(40.7127837, -74.00594130000002),
-            zoom: 13,
-            mapTypeControl: false,
-          panControl: false,
-          zoomControl: false,
-          streetViewControl: false,
-            disableDefaultUI: true    
+        center: new google.maps.LatLng(40.7127837, -74.00594130000002),
+        zoom: 13,
+        mapTypeControl: false,
+        panControl: false,
+        zoomControl: false,
+        streetViewControl: false,
+        disableDefaultUI: true    
         }
         this.map = new google.maps.Map(
             document.getElementById("map"), options
@@ -74,7 +71,7 @@ myApp.controller('searchController', function($scope, $http, Map) {
    $scope.initializeAutocomplete = function() {
      var input = document.getElementById('autocomplete');
               var options = {
-                types: ['(cities)',]
+                types: ['(cities)']
               };
                 
                var autocomplete = new google.maps.places.Autocomplete(input, options);
@@ -110,21 +107,3 @@ myApp.controller('searchController', function($scope, $http, Map) {
 });
 
 
-
-myApp.controller('favouritesController', function($scope) {
-  console.log('fav controller')
-  $scope.message = 'This is the favourites screen'
-  $scope.delete = function(id) {
-    console.log('deleting id '+id)
-  }
-  var init = function() {
-    console.log('getting books')
-    var results = Array()
-    for (var a in localStorage) {
-      results.push(localStorage[a])
-    }
-    console.log(results)
-    $scope.places = results
-  }
-  init()
-})

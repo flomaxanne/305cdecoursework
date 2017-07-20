@@ -8,16 +8,8 @@ exports.search = function(query, callback) {
     callback({code:400, response:{status:'error', message:'No input for query'}})
   }
 
-  const url = 'https://maps.googleapis.com/maps/api/place/textsearch/json?'
-  const query_string = {q: query, maxResults: 40, html_attributions: 'results(id,name,place_id,geometry(location.lat(),location.lng()))'}
-  request.get({url: url, qs: query_string}, function(err, res, body) {	//body is a string
-    if (err) {
-    	console.log('Google search has failed')
-      return callback({code:500, response:{status:'error', message:'Google search has failed', data:err}})
-    }
     
-    
-        exports.search = function() {
+          exports.search = function() {
         request.get(Map.search($scope.searchTerm)
         .then(
             function(err,res,body) { // success
@@ -42,7 +34,7 @@ exports.search = function(query, callback) {
     }
     else
     	callback({code:500, response:{status:'No places found', message:'Google Search failed', data:''}})
-  })
+  
 }
 
 
